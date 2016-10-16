@@ -13,6 +13,7 @@ function NavLink(props) {
     )
 };
 
+//Todo: why isn't this throwing errors
 NavLink.proptypes = {
     path: PropTypes.string.isRequired,
     iconName: PropTypes.string.isRequired,
