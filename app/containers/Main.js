@@ -14,7 +14,9 @@ var Main = React.createClass({
             </div>
             <main className="mdl-layout__content">
                 <div className="page-content">
-                    {this.props.children}
+                    <div className="mdl-grid">
+                        {this.props.children}
+                    </div>
                 </div>
             </main>
         </div>
