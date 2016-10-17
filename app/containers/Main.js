@@ -13,10 +13,8 @@ var Main = React.createClass({
                 </nav>
             </div>
             <main className="mdl-layout__content">
-                <div className="page-content">
-                    <div className="mdl-grid">
-                        {this.props.children}
-                    </div>
+                <div className="page-content">                    
+                    {this.props.children}                    
                 </div>
             </main>
         </div>
