@@ -27,6 +27,9 @@ var ShortenerContainer = React.createClass({
     },
     handleSubmitUrl: function(e) {
         e.preventDefault();
+        this.setState({
+            status:'loading'
+        });
         getShortenedUrl(this.state.url)
             .then(result => {
                 if(result.data) {

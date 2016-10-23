@@ -9,7 +9,8 @@ function About(props) {
                 About Me
             </div>
             <div className="mdl-card__supporting-text">
-                Full-stack web developer with over 2 years of professional experience in .NET and Javascript technologies.
+                <p>Full-stack web developer with over 2 years of professional experience in .NET and Javascript technologies. </p>
+                <p>This site is a rebuild of a few projects in Material Design Lite and React.</p>
             </div>
             <div className="mdl-card__actions mdl-card--border">
                 <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">

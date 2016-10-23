@@ -18,7 +18,7 @@ function Shortener(props) {
     return (
         <div className="mdl-card mdl-shadow--2dp">
             <div className="mdl-card__title">
-                Url Shortener
+                Url Shortener                
             </div>
             <div className="mdl-card__supporting-text">                
                 <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -34,8 +34,9 @@ function Shortener(props) {
             </div>
             <div className="mdl-card__actions mdl-card--border">
                 <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-                    onClick={props.onSubmitUrl}>
-                    Get Link
+                    onClick={props.onSubmitUrl}
+                    disabled={props.status == 'loading'}>
+                    {props.status == 'loading' ? 'Loading...' : 'Get Link'}                    
                 </a>                                
             </div>
         </div>

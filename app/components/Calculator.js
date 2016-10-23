@@ -53,7 +53,7 @@ function Output(props) {
             id="calc-output" 
             className="mdl-textfield__input" 
             type="text" value={props.result} 
-            maxLength="9" 
+            maxLength="8" 
             disabled />
     )
 };
