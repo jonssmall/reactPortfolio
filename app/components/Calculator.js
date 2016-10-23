@@ -58,8 +58,7 @@ function Output(props) {
     )
 };
 
-function Calculator(props) {
-    console.log(props);
+function Calculator(props) {    
     return (
         <div style={styles.calcCard} className="container mdl-card mdl-shadow--2dp">
             <div className="row">

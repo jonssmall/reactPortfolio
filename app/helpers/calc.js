@@ -5,7 +5,7 @@ var Calc = function () {
 };
 Calc.prototype = {
     constructor: Calc,
-    apply_and_set_operation: function (next_op) {
+    apply_and_set_operation: function (next_op) {        
         if (next_op === 'C') {
             this.result = 0;
             this.operand = '';
@@ -28,6 +28,9 @@ Calc.prototype = {
                     break;
                 case '/':
                     this.result /= +this.operand;
+                    break;                
+                case '%':
+                    this.result %= +this.operand;
                     break;
             }
         }
@@ -37,6 +40,8 @@ Calc.prototype = {
     add_input: function (character) {
         if (character === '.') {
             this.operand += this.operand === '' ? '0.' : '.';
+        } else if (character === '+/-') {
+            this.operand *= -1;
         } else if (character >= '0' && character <= '9') {                        
             this.operand += character;            
         } else {
@@ -46,9 +51,8 @@ Calc.prototype = {
     get_operand: function () {
         return this.operand === '' ? this.result : this.operand;
     },
-    on_input: function (character) {           
-        this.add_input(character);
-        console.log(this.get_operand());        
+    on_input: function (character) {         
+        this.add_input(character);        
     },    
 };
 
