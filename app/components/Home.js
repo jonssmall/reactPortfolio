@@ -2,7 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var About = require('./About');
 var ShortenerContainer = require('../containers/ShortenerContainer');
-var Calculator = require('./Calculator');
+var CalculatorContainer = require('../containers/CalculatorContainer');
 
 function Home(props) {
     return (
@@ -17,7 +17,7 @@ function Home(props) {
             </div>
             <div className="mdl-cell mdl-cell--8-col">
                 <div className="mdl-cell">
-                    <Calculator />
+                    <CalculatorContainer />
                 </div>                  
             </div>
         </div>

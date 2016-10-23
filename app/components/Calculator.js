@@ -37,9 +37,11 @@ var makeButtonClasses = (props) => {
 };
 
 function Button(props) {    
+    if (props.handler) var boundClick = props.handler.bind(null, props.value);
     return (
-        <button style={styles.button} 
-            className={makeButtonClasses(props)}>
+        <button style={styles.button}
+            className={makeButtonClasses(props)}
+            onClick={boundClick}>
             {props.value}
         </button>
     )
@@ -65,13 +67,13 @@ function Calculator(props) {
                 </div>
             </div>
             <div className="row">
-                <Button value="C" accent="true" /> {/*Canot figure out why 'AC' displaces width slightly */}
+                <Button value="C" accent="true" />
                 <Button value="+/-" accent="true" />
                 <Button value="%" accent="true" />
                 <Button value="/" accent="true" />
             </div>
             <div className="row">
-                <Button value="7" />
+                <Button value="7" handler={props.onNumberClick}/>
                 <Button value="8" />
                 <Button value="9" />
                 <Button value="X" accent="true" />
