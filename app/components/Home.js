@@ -3,6 +3,7 @@ var PropTypes = React.PropTypes;
 var About = require('./About');
 var ShortenerContainer = require('../containers/ShortenerContainer');
 var CalculatorContainer = require('../containers/CalculatorContainer');
+var TicTacToeContainer = require('../containers/TicTacToeContainer');
 
 function Home(props) {
     return (
@@ -18,7 +19,10 @@ function Home(props) {
             <div className="mdl-cell mdl-cell--8-col">
                 <div className="mdl-cell">
                     <CalculatorContainer />
-                </div>                  
+                </div>
+                <div className="mdl-cell">
+                    <TicTacToeContainer />
+                </div>      
             </div>
         </div>
     )

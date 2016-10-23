@@ -1,9 +1,24 @@
 var React = require('react');
+var TicTacToe = require('../components/TicTacToe');
+var ticEngine = require('../helpers/ticTacToe');
+
 
 var TicTacToeContainer = React.createClass({
-  render: function () {
-    return <p>Tic Tac Toe </p>
-  }
+    getInitialState: function() {
+        return {
+            playerScore: 0,
+            botscore: 0
+        }
+    },
+    handleButtonClick: function(e) {        
+        console.log(e);
+    },
+    render: function () {
+        return <TicTacToe
+                playerScore={this.state.playerScore}
+                botScore={this.state.botscore}
+                buttonClick={this.handleButtonClick}/>
+    }
 });
 
 module.exports = TicTacToeContainer;
