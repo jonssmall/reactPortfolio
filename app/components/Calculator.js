@@ -47,53 +47,54 @@ function Button(props) {
     )
 };
 
-function Output() {
+function Output(props) {
     return (
         <input style={styles.output} 
             id="calc-output" 
             className="mdl-textfield__input" 
-            type="text" value="0" 
+            type="text" value={props.result} 
             maxLength="9" 
             disabled />
     )
 };
 
 function Calculator(props) {
+    console.log(props);
     return (
         <div style={styles.calcCard} className="container mdl-card mdl-shadow--2dp">
             <div className="row">
                 <div style={{padding:0}} className="mdl-textfield mdl-js-textfield">
-                    <Output />
+                    <Output result={props.output}/>
                 </div>
             </div>
             <div className="row">
-                <Button value="C" accent="true" />
-                <Button value="+/-" accent="true" />
-                <Button value="%" accent="true" />
-                <Button value="/" accent="true" />
+                <Button value="C" accent="true" handler={props.onButtonClick}/>
+                <Button value="+/-" accent="true" handler={props.onButtonClick}/>
+                <Button value="%" accent="true" handler={props.onButtonClick}/>
+                <Button value="/" accent="true" handler={props.onButtonClick}/>
             </div>
             <div className="row">
-                <Button value="7" handler={props.onNumberClick}/>
-                <Button value="8" />
-                <Button value="9" />
-                <Button value="X" accent="true" />
+                <Button value="7" handler={props.onButtonClick}/>
+                <Button value="8" handler={props.onButtonClick}/>
+                <Button value="9" handler={props.onButtonClick}/>
+                <Button value="X" accent="true" handler={props.onButtonClick}/>
             </div>
             <div className="row">
-                <Button value="4" />
-                <Button value="5" />
-                <Button value="6" />
-                <Button value="-" accent="true" />
+                <Button value="4" handler={props.onButtonClick}/>
+                <Button value="5" handler={props.onButtonClick}/>
+                <Button value="6" handler={props.onButtonClick}/>
+                <Button value="-" accent="true" handler={props.onButtonClick}/>
             </div>
             <div className="row">
-                <Button value="1" />
-                <Button value="2" />
-                <Button value="3" />
-                <Button value="+" accent="true" />
+                <Button value="1" handler={props.onButtonClick}/>
+                <Button value="2" handler={props.onButtonClick}/>
+                <Button value="3" handler={props.onButtonClick}/>
+                <Button value="+" accent="true" handler={props.onButtonClick}/>
             </div>
             <div className="row">
-                <Button value="0" long="true" />                
-                <Button value="." />
-                <Button value="=" accent="true" />
+                <Button value="0" long="true" handler={props.onButtonClick}/>         
+                <Button value="." handler={props.onButtonClick}/>
+                <Button value="=" accent="true" handler={props.onButtonClick}/>
             </div>           
         </div>
     )
