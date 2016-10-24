@@ -40,7 +40,7 @@ Calc.prototype = {
     add_input: function (character) {
         if (character === '.') {
             this.operand += this.operand === '' ? '0.' : '.';
-        } else if (character === '+/-') {
+        } else if (character === '+/-') { //Buggy when applied to result, please revisit
             this.operand *= -1;
         } else if (character >= '0' && character <= '9') {                        
             this.operand += character;            

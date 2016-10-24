@@ -1,6 +1,5 @@
 var React = require('react');
 var TicTacToe = require('../components/TicTacToe');
-var ticEngine = require('../helpers/ticTacToe'); 
 
 const winningMoves = [
     [1,2,3],[4,5,6],[7,8,9],
