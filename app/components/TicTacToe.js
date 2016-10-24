@@ -7,6 +7,11 @@ var styles = {
         height: '90px',
         width: '90px',
         fontSize: '1.5em'
+    },
+    reset: {
+        float: 'right',
+        lineHeight: '0px',
+        height: '20px'
     }
 };
 
@@ -21,14 +26,25 @@ function Marker(props) {
     )
 }
 
-function TicTacToe(props) {
+function Reset(props) {         
+    return (
+        <button style={styles.reset}
+                onClick={props.handler}
+                className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+            Reset     
+        </button>
+    )
+}
+
+function TicTacToe(props) {    
     let markers = [];
-    for (var position in props.board) {            
+    for (var position in props.board) {
         markers.push(<Marker handler={props.buttonClick} 
                         key={position} 
                         position={position} 
                         marker={props.board[position]}/>);
-    }    
+    }
+    if (props.finished) var reset = <Reset handler={props.resetClick}/>;
     return (
         <div className="mdl-card mdl-shadow--2dp">
             <div className="mdl-card__title">
@@ -38,7 +54,8 @@ function TicTacToe(props) {
                 {markers}
             </div>
             <div className="mdl-card__actions mdl-card--border">
-                Player: {props.playerScore} AI: {props.botScore}
+                <span>Player: {props.playerScore} AI: {props.botScore}</span>
+                {reset}
             </div>
         </div>
     )

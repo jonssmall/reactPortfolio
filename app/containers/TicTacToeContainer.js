@@ -33,15 +33,6 @@ var checkTie = function(board) { //checks if every square is occupied
     return true;
 };
 
-var commenceTurn = function(board) {	
-    if (checkVictory(board)) {
-        //this.awardVictory(this.currentPlayer);
-        console.log("someone won. Resetting Board...");        
-    } else if (checkTie(board)) {
-        console.log("Tie. Resetting Board...");        
-    }
-};
-
 var TicTacToeContainer = React.createClass({
     getInitialState: function() {
         return {
@@ -60,8 +51,10 @@ var TicTacToeContainer = React.createClass({
             board: board
         });                
         if (checkVictory(board)) {
+            var score = this.state.playerScore;
+            score++
             this.setState({
-                playerScore: this.state.playerScore++,
+                playerScore: score,
                 finished: true
             });
             this.disableBoard();
@@ -84,8 +77,10 @@ var TicTacToeContainer = React.createClass({
             }                        
         }
         if (checkVictory(board)) {
+            var score = this.state.botScore;
+            score++
             this.setState({
-                botScore: this.state.botScore++,
+                botScore: score,
                 finished: true
             });
             this.disableBoard();
@@ -106,12 +101,22 @@ var TicTacToeContainer = React.createClass({
             board: board
         });        
     },
+    handleReset: function() {
+        this.setState ({
+            finished: false,
+            board: {
+                1: '', 2: '', 3: '', 4: '', 5: '', 6: '', 7: '', 8: '', 9: ''
+            }
+        });
+    },
     render: function () {
         return <TicTacToe
                 playerScore={this.state.playerScore}
                 botScore={this.state.botScore}
                 board={this.state.board}
-                buttonClick={this.handleButtonClick}/>
+                finished={this.state.finished}
+                buttonClick={this.handleButtonClick}
+                resetClick={this.handleReset}/>
     }
 });
 
