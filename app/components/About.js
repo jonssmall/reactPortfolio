@@ -10,12 +10,9 @@ function About(props) {
             </div>
             <div className="mdl-card__supporting-text">
                 <p>Full-stack web developer with over 2 years of professional experience in .NET and Javascript technologies. </p>
-                <p>This site is a rebuild of a few projects in Material Design Lite and React.</p>
+                <p>This site is build with Material Design Lite and React.</p>
             </div>
-            <div className="mdl-card__actions mdl-card--border">
-                <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    View Resume
-                </a>                
+            <div className="mdl-card__actions mdl-card--border">                 
                 <SocialLink url="https://github.com/jonssmall/" icon="github" />
                 <SocialLink url="https://github.com/jonssmall/" icon="linkedin" />
                 <SocialLink url="http://codepen.io/jonssmall/pens/public/" icon="codepen" />
