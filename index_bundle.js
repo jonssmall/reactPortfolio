@@ -27621,20 +27621,15 @@
 	        React.createElement(
 	            'div',
 	            { className: 'mdl-card__title' },
-	            'About Me'
+	            'About This Page'
 	        ),
 	        React.createElement(
 	            'div',
-	            { className: 'mdl-card__supporting-text' },
+	            { className: 'mdl-card__supporting-text' },	            
 	            React.createElement(
 	                'p',
 	                null,
-	                'Full-stack web developer with over 2 years of professional experience in .NET and Javascript technologies. '
-	            ),
-	            React.createElement(
-	                'p',
-	                null,
-	                'This site is build with Material Design Lite and React.'
+	                'This site is build with Material Design Lite and React. Future plans include Redux, semantic ES6 and NodeJS API projects.'
 	            )
 	        ),
 	        React.createElement(
