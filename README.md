@@ -1,4 +1,4 @@
-	[Live demo.](https://jonssmall.github.io/reactPortfolio/)
+	[Live demo](https://jonssmall.github.io/reactPortfolio/)
 
 npm install, npm start
 
